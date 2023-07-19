@@ -37,7 +37,6 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
             make.left.equalToSuperview().offset(collectionViewOffset)
             make.right.equalToSuperview().offset(-collectionViewOffset)
         }
-        
     }
     
     override func viewDidLoad() {
@@ -89,9 +88,12 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
 
+// MARK: - UICollectionViewDataSource
 extension MainScreen: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         pokemons.count
@@ -135,7 +137,7 @@ extension MainScreen: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
+// MARK: - PokeManagerDelegate
 extension MainScreen: PokeManagerDelegate {
     func didUpdatePokemons(_ manager: PokeManager, pokemon: PokeModel) {
         self.pokemons.append(pokemon)
