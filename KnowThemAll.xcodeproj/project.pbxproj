@@ -28,6 +28,9 @@
 		9369CF052A5DB15600C70C9C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369CF042A5DB15600C70C9C /* HeaderView.swift */; };
 		9369CF092A5DC1A300C70C9C /* PokeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369CF082A5DC1A300C70C9C /* PokeDetailView.swift */; };
 		936F43512A5D879D00E90E0F /* PokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F43502A5D879D00E90E0F /* PokeData.swift */; };
+		93DFF05E2A682BE100CE9647 /* PokeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFF05D2A682BE100CE9647 /* PokeDetailViewModel.swift */; };
+		93DFF0602A683C3600CE9647 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFF05F2A683C3600CE9647 /* CustomSegmentedControl.swift */; };
+		93DFF0622A69699F00CE9647 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFF0612A69699F00CE9647 /* StatsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +74,9 @@
 		9369CF042A5DB15600C70C9C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9369CF082A5DC1A300C70C9C /* PokeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailView.swift; sourceTree = "<group>"; };
 		936F43502A5D879D00E90E0F /* PokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeData.swift; sourceTree = "<group>"; };
+		93DFF05D2A682BE100CE9647 /* PokeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailViewModel.swift; sourceTree = "<group>"; };
+		93DFF05F2A683C3600CE9647 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
+		93DFF0612A69699F00CE9647 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +132,6 @@
 				93233D792A59C9ED001D28E5 /* AppDelegate.swift */,
 				93233D7B2A59C9ED001D28E5 /* SceneDelegate.swift */,
 				93233D7D2A59C9ED001D28E5 /* ViewController.swift */,
-				9369CF082A5DC1A300C70C9C /* PokeDetailView.swift */,
 				93233DBE2A5C74CA001D28E5 /* ViewModel */,
 				9369CF062A5DC0DE00C70C9C /* Model */,
 				9369CF072A5DC11200C70C9C /* View */,
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				93233DA92A5C4D5D001D28E5 /* MainScreen.swift */,
+				93DFF05D2A682BE100CE9647 /* PokeDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -187,8 +193,11 @@
 		9369CF072A5DC11200C70C9C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9369CF082A5DC1A300C70C9C /* PokeDetailView.swift */,
+				93DFF05F2A683C3600CE9647 /* CustomSegmentedControl.swift */,
 				9369CF042A5DB15600C70C9C /* HeaderView.swift */,
 				93233DAE2A5C50DE001D28E5 /* PokeCell.swift */,
+				93DFF0612A69699F00CE9647 /* StatsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -336,11 +345,14 @@
 			files = (
 				93233DBB2A5C67F1001D28E5 /* PokeModel.swift in Sources */,
 				93233DB12A5C5126001D28E5 /* Extesions.swift in Sources */,
+				93DFF05E2A682BE100CE9647 /* PokeDetailViewModel.swift in Sources */,
 				936F43512A5D879D00E90E0F /* PokeData.swift in Sources */,
 				93233D7E2A59C9ED001D28E5 /* ViewController.swift in Sources */,
+				93DFF0622A69699F00CE9647 /* StatsTableViewCell.swift in Sources */,
 				93233DAA2A5C4D5D001D28E5 /* MainScreen.swift in Sources */,
 				9369CF052A5DB15600C70C9C /* HeaderView.swift in Sources */,
 				93233D7A2A59C9ED001D28E5 /* AppDelegate.swift in Sources */,
+				93DFF0602A683C3600CE9647 /* CustomSegmentedControl.swift in Sources */,
 				93233D7C2A59C9ED001D28E5 /* SceneDelegate.swift in Sources */,
 				93233DBD2A5C7486001D28E5 /* PokeManager.swift in Sources */,
 				9369CF092A5DC1A300C70C9C /* PokeDetailView.swift in Sources */,

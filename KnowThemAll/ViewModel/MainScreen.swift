@@ -89,7 +89,24 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let pokeDatailViewModel = PokeDetailViewModel()
+        let clickedPokemon = pokemons[indexPath.row]
+        pokeDatailViewModel.chosenPokemon = clickedPokemon
+        pokeDatailViewModel.modalPresentationStyle = .fullScreen
         
+        if let height = clickedPokemon.height,
+           let weight = clickedPokemon.weight,
+           let power = clickedPokemon.power,
+           let attack = clickedPokemon.attack,
+           let damage = clickedPokemon.damage {
+            pokeDatailViewModel.values.append("\(height)0 cm")
+            pokeDatailViewModel.values.append("\(weight) kg")
+            pokeDatailViewModel.values.append("\(power)")
+            pokeDatailViewModel.values.append("\(attack.capitalized)")
+            pokeDatailViewModel.values.append("\(damage)")
+        }
+        
+        self.present(pokeDatailViewModel, animated: true, completion: nil)
     }
 }
 

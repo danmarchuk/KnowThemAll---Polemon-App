@@ -9,10 +9,13 @@ import Foundation
 import UIKit
 import SnapKit
 
+@IBDesignable
 class PokeDetailView: UIView {
     
-    let backArrow = UIImageView().apply {
-        $0.image = UIImage(named: "backArrow")
+    
+    let backArrow = UIButton().apply {
+        $0.setImage(UIImage(named: "backArrow"), for: .normal)
+        $0.contentMode = .scaleAspectFit
     }
     
     let pokeName = UILabel().apply {
@@ -25,13 +28,12 @@ class PokeDetailView: UIView {
         $0.backgroundColor = .clear
     }
     
-    let segmentedControl = UISegmentedControl(items: ["About", "Stats", "Evolution", "Moves" ]).apply {
-        $0.selectedSegmentIndex = 0
-        $0.backgroundColor = .systemBackground
-        $0.selectedSegmentTintColor = .systemBlue
-        $0.setTitleTextAttributes([.foregroundColor: UIColor.white], for: .selected)
-        $0.setTitleTextAttributes([.foregroundColor: UIColor.systemBlue], for: .normal)
+    
+    let segmentedControl = CustomSegmentedControl().apply {
+        $0.setButtonTitles(buttonTitles: ["About", "Stats", "Evolution", "Moves" ])
     }
+    
+    
     
     init() {
         super.init(frame: UIScreen.main.bounds)
@@ -42,11 +44,22 @@ class PokeDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(withName name: String, withUrl url: String) {
+        self.backgroundColor = .white
+        pokeName.text = name
+        pokeImage.sd_setImage(with: URL(string: url), completed: nil)
+        setupView()
+    }
+    
     private func setupView() {
         addSubview(backArrow)
         addSubview(pokeName)
         addSubview(pokeImage)
         addSubview(segmentedControl)
+        
+        
+        // make the descriptionLabel text capitalized
+        pokeName.text = pokeName.text?.capitalized
         
         backArrow.snp.makeConstraints { make in
             make.width.height.equalTo(15)
@@ -55,19 +68,23 @@ class PokeDetailView: UIView {
         }
         
         pokeName.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(135)
+            make.top.equalTo(backArrow.snp.bottom).offset(60)
             make.left.equalToSuperview().offset(24)
         }
         
         pokeImage.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(204)
+            make.top.equalTo(pokeName.snp.bottom).offset(70)
             make.centerX.equalToSuperview()
-            
+            make.height.equalTo(self.frame.size.height / 6)
+            make.width.equalTo(self.frame.size.width / 3)
         }
         
         segmentedControl.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().offset(24)
+            make.top.equalTo(pokeImage.snp.bottom).offset(40)
+            make.left.equalToSuperview().offset(24)
+            make.right.equalToSuperview().offset(-24)
         }
+        
     }
     
     
