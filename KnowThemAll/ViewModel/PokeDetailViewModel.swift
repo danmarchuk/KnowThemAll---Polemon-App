@@ -70,6 +70,4 @@ extension PokeDetailViewModel: UITableViewDelegate, UITableViewDataSource {
         // Return the desired height for each cell (including the additional spacing)
         return 40  // Adjust the value to add more space
     }
-    
 }
-

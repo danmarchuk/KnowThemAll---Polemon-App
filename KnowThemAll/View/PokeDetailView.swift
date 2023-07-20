@@ -12,7 +12,6 @@ import SnapKit
 @IBDesignable
 class PokeDetailView: UIView {
     
-    
     let backArrow = UIButton().apply {
         $0.setImage(UIImage(named: "backArrow"), for: .normal)
         $0.contentMode = .scaleAspectFit
@@ -28,12 +27,9 @@ class PokeDetailView: UIView {
         $0.backgroundColor = .clear
     }
     
-    
     let segmentedControl = CustomSegmentedControl().apply {
         $0.setButtonTitles(buttonTitles: ["About", "Stats", "Evolution", "Moves" ])
     }
-    
-    
     
     init() {
         super.init(frame: UIScreen.main.bounds)
@@ -84,9 +80,5 @@ class PokeDetailView: UIView {
             make.left.equalToSuperview().offset(24)
             make.right.equalToSuperview().offset(-24)
         }
-        
     }
-    
-    
-    
 }

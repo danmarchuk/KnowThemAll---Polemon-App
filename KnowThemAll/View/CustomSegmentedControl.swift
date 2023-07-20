@@ -50,7 +50,6 @@ class CustomSegmentedControl: UIView {
         selectedIndex = index
         button.setTitleColor(selectorTextColor, for: .normal)
         button.titleLabel?.font = UIFont(name: "Lato-Regular", size: 11)
-
         let selectorPosition = (frame.width - 5) / CGFloat(buttonTitles.count) * CGFloat(index) + 5
         UIView.animate(withDuration: 0.2) {
             self.selectorView.frame.origin.x = selectorPosition
@@ -71,7 +70,6 @@ class CustomSegmentedControl: UIView {
             }
         }
     }
-
 }
 
 // Configuration View
@@ -106,7 +104,6 @@ extension CustomSegmentedControl {
             make.left.equalTo(self).offset(5)
         }
     }
-
 
     private func configStackView() {
         let stack = UIStackView(arrangedSubviews: buttons)

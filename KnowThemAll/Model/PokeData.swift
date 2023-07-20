@@ -64,5 +64,3 @@ struct PokeData: Codable, Equatable {
         let front_default: String
     }
 }
-
-

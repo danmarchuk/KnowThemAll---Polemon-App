@@ -23,8 +23,6 @@ class HeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(headerLabel)
-        
-        // Setup constraints for label
         headerLabel.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.bottom.equalToSuperview().offset(-10)
@@ -35,4 +33,3 @@ class HeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-

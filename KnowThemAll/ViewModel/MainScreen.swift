@@ -22,14 +22,16 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
         return  collectionViewOffset + spacingLeftRight / numberOfRows
     }
     
-    
     private var pokemons: [PokeModel] = []
     let pokeManager = PokeManager()
     
     private func addElements() {
         addLightningBolts()
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView() {
         view.addSubview(collectionView)
-        
         
         // Setup collectionView constraints
         collectionView.snp.makeConstraints { make in
@@ -105,7 +107,6 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
             pokeDatailViewModel.values.append("\(attack.capitalized)")
             pokeDatailViewModel.values.append("\(damage)")
         }
-        
         self.present(pokeDatailViewModel, animated: true, completion: nil)
     }
 }

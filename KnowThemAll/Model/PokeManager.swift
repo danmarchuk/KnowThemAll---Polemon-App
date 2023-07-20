@@ -69,5 +69,4 @@ class PokeManager {
             return nil
         }
     }
-    
 }
