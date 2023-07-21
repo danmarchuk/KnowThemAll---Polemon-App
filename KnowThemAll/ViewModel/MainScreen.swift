@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
+import RxSwift
 
 @IBDesignable
 final class MainScreen: UIViewController, UICollectionViewDelegate {
@@ -21,6 +22,7 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
     private var widthOffset: CGFloat {
         return  collectionViewOffset + spacingLeftRight / numberOfRows
     }
+    private let disposeBag = DisposeBag()
     
     private var pokemons: [PokeModel] = []
     let pokeManager = PokeManager()
@@ -45,8 +47,16 @@ final class MainScreen: UIViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         configureCollectionView()
         addElements()
-        pokeManager.delegate = self
         pokeManager.fetchPokemons()
+        // perform observation on the main thread
+            .observe(on: MainScheduler.instance)
+        // now we subscribe to an observable and perform t:
+        // onNext for our information, onError for errors
+            .subscribe(onNext: { [weak self] pokemon in
+                self?.pokemons.append(pokemon)
+                self?.collectionView.reloadData()
+            }, onError: { error in
+            }).disposed(by: disposeBag)
     }
 
     func addLightningBolts() {
@@ -152,18 +162,6 @@ extension MainScreen: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: collectionView.bounds.width, height: UIScreen.main.bounds.height / 6.5)
-    }
-}
-
-// MARK: - PokeManagerDelegate
-extension MainScreen: PokeManagerDelegate {
-    func didUpdatePokemons(_ manager: PokeManager, pokemon: PokeModel) {
-        self.pokemons.append(pokemon)
-        DispatchQueue.main.async {
-            self.collectionView.reloadData() }
-    }
-    
-    func didFailWithError(error: Error) {
     }
 }
 

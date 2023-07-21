@@ -7,44 +7,42 @@
 
 import Foundation
 import UIKit
-
-protocol PokeManagerDelegate {
-    func didUpdatePokemons(_ manager: PokeManager, pokemon: PokeModel)
-    func didFailWithError(error: Error)
-}
+import RxSwift
 
 final class PokeManager {
     let numberOfPokemons = 100
     let pokeUrl = "https://pokeapi.co/api/v2/pokemon/"
-    
-    var delegate: PokeManagerDelegate?
     let session: URLSession
-    
+
     init(session: URLSession = URLSession.shared) {
         self.session = session
     }
     
-    func fetchPokemons() {
-        for index in 1...numberOfPokemons {
-            let urlString = "\(pokeUrl)\(index)"
-            performRequest(with: urlString)
+    func fetchPokemons() -> Observable<PokeModel> {
+        let observable = Observable<PokeModel>.create { [weak self] (observer) -> Disposable in
+            for index in 1...(self?.numberOfPokemons ?? 0) {
+                let urlString = "\(self?.pokeUrl ?? "")\(index)"
+                self?.performRequest(with: urlString, observer: observer)
+            }
+            return Disposables.create()
         }
+        return observable
     }
     
-    private func performRequest(with urlString: String) {
+    private func performRequest(with urlString: String, observer: AnyObserver<PokeModel>) {
         if let url = URL(string: urlString) {
             let task = session.dataTask(with: url) { [weak self] data, response, error in
-                if error != nil {
-                    self?.delegate?.didFailWithError(error: error!)
+                if let error = error {
+                    observer.onError(error)
                     return
                 }
                 if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode != 200 {
                     let error = NSError(domain: "", code: httpResponse.statusCode, userInfo: nil)
-                    self?.delegate?.didFailWithError(error: error)
+                    observer.onError(error)
                     return
                 }
-                if let safeData = data, let pokemon = self?.parseJSONToPokemon(safeData), let manager = self {
-                    self?.delegate?.didUpdatePokemons(manager, pokemon: pokemon)
+                if let safeData = data, let pokemon = self?.parseJSONToPokemon(safeData) {
+                    observer.onNext(pokemon)
                 }
             }
             task.resume()
@@ -65,7 +63,6 @@ final class PokeManager {
             let pokemon = PokeModel(name: decodedData.name, ability: ability, height: height, weight: weight, moves: moves, power: damage, attack: attack, damage: damage, imageUrl: imageUrl)
             return pokemon
         } catch {
-            delegate?.didFailWithError(error: error)
             return nil
         }
     }
