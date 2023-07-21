@@ -13,7 +13,7 @@ protocol PokeManagerDelegate {
     func didFailWithError(error: Error)
 }
 
-class PokeManager {
+final class PokeManager {
     let numberOfPokemons = 100
     let pokeUrl = "https://pokeapi.co/api/v2/pokemon/"
     

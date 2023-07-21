@@ -10,7 +10,7 @@ import SnapKit
 import SDWebImage
 
 
-class PokeCell: UICollectionViewCell {
+final class PokeCell: UICollectionViewCell {
     static let identifier = "PokeCell"
 
     private let nameLabel = UILabel().apply {
