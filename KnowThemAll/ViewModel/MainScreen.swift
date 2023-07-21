@@ -164,5 +164,3 @@ extension MainScreen: UICollectionViewDelegateFlowLayout {
         return CGSize(width: collectionView.bounds.width, height: UIScreen.main.bounds.height / 6.5)
     }
 }
-
-
