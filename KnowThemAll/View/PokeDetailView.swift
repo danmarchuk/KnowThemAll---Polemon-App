@@ -15,16 +15,19 @@ class PokeDetailView: UIView {
     let backArrow = UIButton().apply {
         $0.setImage(UIImage(named: "backArrow"), for: .normal)
         $0.contentMode = .scaleAspectFit
+        $0.accessibilityIdentifier = "BackArrowButton"
     }
     
     let pokeName = UILabel().apply {
         $0.font = UIFont(name: "Lato-Bold", size: 24)
         $0.textColor = .black
         $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.accessibilityIdentifier = "PokeNameLabel"
     }
     
     let pokeImage = UIImageView().apply {
         $0.backgroundColor = .clear
+        $0.accessibilityIdentifier = "PokeImage"
     }
     
     let segmentedControl = CustomSegmentedControl().apply {

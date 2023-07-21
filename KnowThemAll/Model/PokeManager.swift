@@ -49,7 +49,7 @@ final class PokeManager {
         }
     }
     
-    private func parseJSONToPokemon(_ data: Data) -> PokeModel? {
+    func parseJSONToPokemon(_ data: Data) -> PokeModel? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(PokeData.self, from: data)
@@ -63,6 +63,7 @@ final class PokeManager {
             let pokemon = PokeModel(name: decodedData.name, ability: ability, height: height, weight: weight, moves: moves, power: damage, attack: attack, damage: damage, imageUrl: imageUrl)
             return pokemon
         } catch {
+            print("Error parsing JSON to PokeModel: \(error)")
             return nil
         }
     }

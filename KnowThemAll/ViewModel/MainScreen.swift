@@ -136,6 +136,8 @@ extension MainScreen: UICollectionViewDataSource {
               let imageUrl = pokemons[indexPath.row].imageUrl else { return UICollectionViewCell() }
         
         cell.configure(withName: name, withDescription: description, withUrl: imageUrl )
+        cell.accessibilityIdentifier = "Cell_\(indexPath.row)"
+        
         return cell
     }
 }
