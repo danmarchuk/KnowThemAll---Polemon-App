@@ -34,11 +34,11 @@ The design of the application can be found [here](https://www.figma.com/file/Aa4
 
 1. Clone the repository: 
    ```
-   git clone https://github.com/username/Pokemon-App.git
+   git clone https://github.com/danmarchuk/KnowThemAll-Pokemon-App
    ```
 2. Navigate into the cloned repository: 
    ```
-   cd Pokemon-App
+   cd KnowThemAll-Pokemon-App
    ```
 3. Install the necessary pods: 
    ```
@@ -46,7 +46,7 @@ The design of the application can be found [here](https://www.figma.com/file/Aa4
    ```
 4. Open the project in Xcode: 
    ```
-   open Pokemon-App.xcworkspace
+   open KnowThemAll.xcworkspace
    ```
 5. Select your simulator or device and click `Run`.
 
