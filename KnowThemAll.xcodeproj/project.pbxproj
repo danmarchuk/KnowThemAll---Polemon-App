@@ -26,6 +26,7 @@
 		9369CF052A5DB15600C70C9C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369CF042A5DB15600C70C9C /* HeaderView.swift */; };
 		9369CF092A5DC1A300C70C9C /* PokeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9369CF082A5DC1A300C70C9C /* PokeDetailView.swift */; };
 		936F43512A5D879D00E90E0F /* PokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936F43502A5D879D00E90E0F /* PokeData.swift */; };
+		9381E9A12A782E3E00F45274 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9381E9A02A782E3E00F45274 /* README.md */; };
 		93DFF05E2A682BE100CE9647 /* PokeDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFF05D2A682BE100CE9647 /* PokeDetailViewModel.swift */; };
 		93DFF0602A683C3600CE9647 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFF05F2A683C3600CE9647 /* CustomSegmentedControl.swift */; };
 		93DFF0622A69699F00CE9647 /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DFF0612A69699F00CE9647 /* StatsTableViewCell.swift */; };
@@ -78,6 +79,7 @@
 		9369CF042A5DB15600C70C9C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9369CF082A5DC1A300C70C9C /* PokeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailView.swift; sourceTree = "<group>"; };
 		936F43502A5D879D00E90E0F /* PokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeData.swift; sourceTree = "<group>"; };
+		9381E9A02A782E3E00F45274 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		93DFF05D2A682BE100CE9647 /* PokeDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeDetailViewModel.swift; sourceTree = "<group>"; };
 		93DFF05F2A683C3600CE9647 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		93DFF0612A69699F00CE9647 /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		93233D6D2A59C9ED001D28E5 = {
 			isa = PBXGroup;
 			children = (
+				9381E9A02A782E3E00F45274 /* README.md */,
 				93233D782A59C9ED001D28E5 /* KnowThemAll */,
 				93233D8F2A59C9EF001D28E5 /* KnowThemAllTests */,
 				93233D992A59C9EF001D28E5 /* KnowThemAllUITests */,
@@ -357,6 +360,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9381E9A12A782E3E00F45274 /* README.md in Resources */,
 				93233D862A59C9EF001D28E5 /* LaunchScreen.storyboard in Resources */,
 				93233D832A59C9EF001D28E5 /* Assets.xcassets in Resources */,
 				93233DB62A5C5486001D28E5 /* Lato-Regular.ttf in Resources */,
