@@ -14,7 +14,7 @@ final class PokeDetailViewModel: UIViewController {
     let pokeDetailView = PokeDetailView()
     var chosenPokemon: PokeModel?
     let stats = ["Height", "Weight", "Power", "Attack", "Damage"]
-    var values: [String] = []
+    var values: [String] = [] 
     
     override func loadView() {
         view = pokeDetailView
