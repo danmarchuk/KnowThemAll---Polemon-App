@@ -1,0 +1,6 @@
+framework module Pods_KnowThemAll_KnowThemAllUITests {
+  umbrella header "Pods-KnowThemAll-KnowThemAllUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
